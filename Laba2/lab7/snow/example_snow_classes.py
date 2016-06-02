@@ -28,7 +28,20 @@ class rand_star:
 	def new_position(self):
 		#self.position[0] += self.speed_x
 		self.position[1] += self.speed_y
+	
 		
 	def __str__(self):
-		return '[%d,%d] radius=%d color=(%d,%d,%d)'  %( *self.position, self.radius, *self.color)
+		return '[%d,%d] radius=%d color=(%d,%d,%d)'  %(self.position[0],
+                self.position[1], self.radius, self.color[0], self.color[1], self.color[2])
 
+class star_list:
+        def __init__(self, STFALLSIZE, number):
+                self.number = number
+                self.SIZE = STFALLSIZE
+                self.list =[]
+                for i in range(number):
+                        new_star = rand_star(*STFALLSIZE)
+                        self.list.append(new_star)
+                
+                
+        
